@@ -1,0 +1,83 @@
+<div class="register-card">
+    <div class="container">
+        <div class="register-card">
+            <div class="register-card-head">
+                <h2>Création de compte</h2>
+            </div>
+            <!-- <form id="register"> -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>NOM</label>
+                            <input [(ngModel)]="nom" class="form-control text-uppercase" type="text" placeholder="NOM" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Prénom</label>
+                            <input [(ngModel)]="prenom" class="form-control" type="text" placeholder="Prénom" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Civilité</label>
+                            <select [(ngModel)]="sexes" class="form-select" name="pets" id="pet-select" required>
+                                <option value="Autre">Autre</option>
+                                <option value="Homme">Homme</option>
+                                <option value="Femme">Femme</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Adresse</label>
+                            <input [(ngModel)]="adresse" class="form-control" type="text" placeholder="Adresse" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Code postal</label>
+                            <input [(ngModel)]="cp" id="cp" class="form-control" type="number" placeholder="Code postal" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ville</label>
+                            <input [(ngModel)]="ville" class="form-control" type="text" placeholder="Ville" required>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>N° de téléphone (optionnel)</label>
+                            <input [(ngModel)]="tel" id="tel" class="form-control" type="number" placeholder="N° de téléphone">
+                        </div>
+                        <div class="form-group">
+                            <label>Adresse mail</label>
+                            <input [(ngModel)]="email" class="form-control" type="email" placeholder="Adresse mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nom de compte</label>
+                            <input [(ngModel)]="pseudo" class="form-control" type="text" placeholder="Nom de compte" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mot de passe</label>
+                            <input [(ngModel)]="pwd" [ngModelOptions]="{standalone: true}" id="pwd" class="form-control" type="password" placeholder="Mot de passe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirmer le mot de passe</label>
+                            <input [(ngModel)]="pwdConf" [ngModelOptions]="{standalone: true}" id="pwdConf" class="form-control" type="password" placeholder="Confirmer le mot de passe" required>
+                        </div>
+                        <div class="form-group submit-position">
+                            <input (click)="valider()" type="submit" class="btn btn-primary" value="S'inscrire">
+                        </div>
+                    </div>
+                </div>
+            <!-- </form> -->
+        </div>
+    </div>
+</div>
+
+<app-recap 
+    [nom]="nom"
+    [prenom]="prenom"
+    [sexes]="sexes"
+    [adresse]="adresse"
+    [cp]="cp"
+    [ville]="ville"
+    [tel]="tel"
+    [email]="email"
+    [pseudo]="pseudo"
+    [pwd]="pwd"
+    [pwdConf]="pwdConf">
+</app-recap>
